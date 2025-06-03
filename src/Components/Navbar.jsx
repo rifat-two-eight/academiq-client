@@ -1,15 +1,27 @@
 import { NavLink } from "react-router";
-
 const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className="text-zinc-800" to="/">
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="text-zinc-800" to="/jobs">
+          Jobs
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="text-zinc-800" to="/addjob">
+          Add Job
+        </NavLink>
       </li>
     </>
   );
+
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar shadow-sm text-zinc-800 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -20,29 +32,37 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-white text-zinc-800 dark:text-zinc-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
           >
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <div className="flex gap-2 items-center">
+          <img className="w-14" src="/logo2.png" alt="Logo" />
+          <h2 className="text-2xl font-semibold">
+            Academ<span className="text-purple-700">IQ</span>
+          </h2>
+        </div>
       </div>
+
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
+
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <a className="btn bg-purple-700 text-white hover:bg-purple-800   border-none">
+          Get Started
+        </a>
       </div>
     </div>
   );

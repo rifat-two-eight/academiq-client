@@ -4,9 +4,11 @@ import Footer from "../Components/Footer";
 
 const Root = () => {
   return (
-    <div className="bg-stone-100">
-      <Navbar></Navbar>
-      <Outlet></Outlet>
+    <div className="ubuntu bg-slate-100">
+      <div className="max-w-6xl mx-auto">
+        <Navbar></Navbar>
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );
