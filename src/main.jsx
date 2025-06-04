@@ -8,6 +8,9 @@ import Home from "./Components/Home";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import AuthProvider from "./Context/AuthProvider";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import AddCourse from "./Components/AddCourse";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         Component: Register,
+      },
+      {
+        path: "/addcourse",
+        Component: AddCourse,
       },
     ],
   },

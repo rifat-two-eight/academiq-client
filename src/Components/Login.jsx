@@ -102,7 +102,7 @@ const Login = () => {
 
         <form
           onSubmit={handleLogin}
-          className="p-6 bg-white shadow-md rounded-lg space-y-5"
+          className="p-6 bg-white shadow-md space-y-5"
         >
           <h2 className="text-2xl font-semibold text-center text-zinc-800">
             Login to Your Account

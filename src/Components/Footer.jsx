@@ -18,13 +18,13 @@ const Footer = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="text-gray-300" to="/jobs">
-              Jobs
+            <NavLink className="text-gray-300" to="/courses">
+              Courses
             </NavLink>
           </li>
           <li>
-            <NavLink className="text-gray-300" to="/addjob">
-              Add Job
+            <NavLink className="text-gray-300" to="/addcourse">
+              Add Course
             </NavLink>
           </li>
         </ul>

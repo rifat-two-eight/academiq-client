@@ -1,9 +1,13 @@
-import React from "react";
+import HeroSlider from "./HeroSlider";
+import Skills from "./Skills";
+import Testimonials from "./Testimonials";
 
 const Home = () => {
   return (
     <div>
-      <h2>home</h2>
+      <HeroSlider></HeroSlider>
+      <Testimonials></Testimonials>
+      <Skills></Skills>
     </div>
   );
 };

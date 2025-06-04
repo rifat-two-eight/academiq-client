@@ -15,13 +15,13 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-zinc-800" to="/jobs">
-          Jobs
+        <NavLink className="text-zinc-800" to="/courses">
+          Courses
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-zinc-800" to="/addjob">
-          Add Job
+        <NavLink className="text-zinc-800" to="/addcourse">
+          Add Course
         </NavLink>
       </li>
     </>
