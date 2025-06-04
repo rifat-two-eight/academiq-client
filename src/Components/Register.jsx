@@ -1,13 +1,14 @@
 import { useContext } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router"; // ✅ for navigation
 import { AuthContext } from "../Context/AuthContext";
 import { updateProfile } from "firebase/auth";
 import Lottie from "lottie-react";
-import registerAnimation from "../assets/register.json"; // 👈 Import your JSON file
+import registerAnimation from "../assets/register.json";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const { createUser, setLoading } = useContext(AuthContext);
+  const { createUser, setLoading, setUser } = useContext(AuthContext);
+  const navigate = useNavigate(); // ✅ navigation hook
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -19,13 +20,25 @@ const Register = () => {
     const confirmPassword = form.confirmPassword.value;
     setLoading(true);
 
-    if (password !== confirmPassword) {
+    // ✅ Password validations
+    const errors = [];
+    if (password.length < 8) errors.push("At least 8 characters");
+    if (!/[A-Z]/.test(password)) errors.push("One uppercase letter");
+    if (!/[a-z]/.test(password)) errors.push("One lowercase letter");
+    if (!/[0-9]/.test(password)) errors.push("One number");
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password))
+      errors.push("One special character");
+    if (password.includes(email)) errors.push("Cannot contain your email");
+    if (password !== confirmPassword) errors.push("Passwords do not match");
+
+    if (errors.length > 0) {
       Swal.fire({
-        position: "top-end",
         icon: "error",
-        title: "Password Not Matched!!",
-        showConfirmButton: false,
-        timer: 1500,
+        title: "Password Error",
+        html: `<ul class="text-left">${errors
+          .map((e) => `<li>• ${e}</li>`)
+          .join("")}</ul>`,
+        confirmButtonColor: "#7319c1",
       });
       setLoading(false);
       return;
@@ -34,6 +47,14 @@ const Register = () => {
     createUser(email, password)
       .then((res) => {
         const user = res.user;
+
+        updateProfile(user, {
+          displayName: name,
+          photoURL: photoURL,
+        }).then(() => {
+          setUser({ ...user, displayName: name, photoURL }); // ✅ update context
+        });
+
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -41,28 +62,17 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+
         setLoading(false);
-
-        updateProfile(user, {
-          displayName: name,
-          photoURL: photoURL,
-        })
-          .then(() => {
-            console.log("Profile updated");
-          })
-          .catch((err) => {
-            console.error("Error updating profile:", err.message);
-          });
-
-        console.log("User created:", user);
+        navigate("/");
       })
       .catch((error) => {
         Swal.fire({
           position: "top-end",
-          icon: "success",
-          title: `${error.message}`,
+          icon: "error",
+          title: error.message,
           showConfirmButton: false,
-          timer: 1500,
+          timer: 2000,
         });
         setLoading(false);
       });
@@ -70,15 +80,12 @@ const Register = () => {
 
   return (
     <div className="min-h-screen my-10 flex flex-col lg:flex-row items-center justify-center gap-10 px-4">
-      {/* Lottie Animation Section */}
       <div className="w-full lg:w-1/3">
         <Lottie animationData={registerAnimation} loop={true} />
       </div>
 
-      {/* Form Section */}
       <div className="w-full lg:w-2/3 sm:w-[80%] md:w-[60%] xl:w-[40%]">
         <title>AcademIQ | Register</title>
-
         <form
           onSubmit={handleRegister}
           className="p-6 bg-white shadow-md space-y-5"
@@ -87,7 +94,6 @@ const Register = () => {
             Create Your Account
           </h2>
 
-          {/* Name */}
           <div>
             <label className="block text-sm font-medium text-zinc-700 mb-1">
               Name
@@ -101,7 +107,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Photo URL */}
           <div>
             <label className="block text-sm font-medium text-zinc-700 mb-1">
               Photo URL
@@ -115,7 +120,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Email */}
           <div>
             <label className="block text-sm font-medium text-zinc-700 mb-1">
               Email
@@ -129,7 +133,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Password */}
           <div>
             <label className="block text-sm font-medium text-zinc-700 mb-1">
               Password
@@ -143,7 +146,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Confirm Password */}
           <div>
             <label className="block text-sm font-medium text-zinc-700 mb-1">
               Confirm Password
@@ -157,7 +159,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Submit */}
           <input
             type="submit"
             value="Register"

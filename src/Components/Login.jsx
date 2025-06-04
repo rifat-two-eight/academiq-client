@@ -1,4 +1,4 @@
-import { Link, Navigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { FaGoogle, FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { use, useState } from "react";
 import loginAnimation from "../assets/login.json"; // 👈 Import your JSON file
@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { loginUser, setLoading, googleLogin, githubLogin } = use(AuthContext);
+  const navigate = useNavigate();
   const handleGoogleLogin = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -25,11 +26,12 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate("/");
       })
       .catch((error) => {
         Swal.fire({
           position: "top-end",
-          icon: "success",
+          icon: "error",
           title: `${error.message}`,
           showConfirmButton: false,
           timer: 1500,
@@ -51,11 +53,12 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate("/");
       })
       .catch((error) => {
         Swal.fire({
           position: "top-end",
-          icon: "success",
+          icon: "error",
           title: `${error.message}`,
           showConfirmButton: false,
           timer: 1500,
@@ -80,11 +83,12 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate("/");
       })
       .catch((error) => {
         Swal.fire({
           position: "top-end",
-          icon: "success",
+          icon: "error",
           title: `${error.message}`,
           showConfirmButton: false,
           timer: 1500,
