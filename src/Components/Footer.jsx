@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-200 py-10 px-5 md:px-16">
       <div className="flex flex-col items-center justify-center gap-3 text-center mb-8">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-1 items-center">
           <img className="w-14" src="/logo2.png" alt="Logo" />
           <h2 className="text-2xl font-semibold">
             Academ<span className="text-purple-700">IQ</span>
