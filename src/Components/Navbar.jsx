@@ -20,6 +20,11 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
+        <NavLink className="text-zinc-800" to="/instructors" end>
+          Instructors
+        </NavLink>
+      </li>
+      <li>
         <NavLink className="text-zinc-800" to="/addcourse">
           Add Course
         </NavLink>
@@ -27,6 +32,11 @@ const Navbar = () => {
       <li>
         <NavLink className="text-zinc-800" to="/managecourses">
           Manage Courses
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="text-zinc-800" to="/my-courses">
+          My Enrolled
         </NavLink>
       </li>
     </>

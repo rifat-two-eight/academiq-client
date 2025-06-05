@@ -15,6 +15,9 @@ import Courses from "./Components/Courses";
 import CourseDetails from "./Components/CourseDetails";
 import PrivateRoute from "./Components/PrivateRoute";
 import ManageCourses from "./Components/ManageCourses";
+import EditCourse from "./Components/EditCourse";
+import MyEnrolledCourses from "./Components/MyEnrolledCourses";
+import Instructors from "./Components/Instructors";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -59,6 +62,26 @@ const router = createBrowserRouter([
             <ManageCourses></ManageCourses>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/edit-course/:id",
+        element: (
+          <PrivateRoute>
+            <EditCourse></EditCourse>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-courses",
+        element: (
+          <PrivateRoute>
+            <MyEnrolledCourses></MyEnrolledCourses>{" "}
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/instructors",
+        Component: Instructors,
       },
     ],
   },

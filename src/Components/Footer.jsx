@@ -13,18 +13,33 @@ const Footer = () => {
         </div>
         <ul className="flex flex-col lg:flex-row gap-5 text-gray-300">
           <li>
-            <NavLink className="text-gray-300" to="/">
+            <NavLink className="text-gray-200" to="/">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink className="text-gray-300" to="/courses">
+            <NavLink className="text-gray-200" to="/courses" end>
               Courses
             </NavLink>
           </li>
           <li>
-            <NavLink className="text-gray-300" to="/addcourse">
+            <NavLink className="text-gray-200" to="/instructors" end>
+              Instructors
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="text-gray-200" to="/addcourse">
               Add Course
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="text-gray-200" to="/managecourses">
+              Manage Courses
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="text-gray-200" to="/my-courses">
+              My Enrolled
             </NavLink>
           </li>
         </ul>
