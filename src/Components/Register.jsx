@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router"; // ✅ for navigation
+import { Link, useLocation, useNavigate } from "react-router"; // ✅ for navigation
 import { AuthContext } from "../Context/AuthContext";
 import { updateProfile } from "firebase/auth";
 import Lottie from "lottie-react";
@@ -8,7 +8,9 @@ import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser, setLoading, setUser } = useContext(AuthContext);
-  const navigate = useNavigate(); // ✅ navigation hook
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -64,7 +66,7 @@ const Register = () => {
         });
 
         setLoading(false);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         Swal.fire({

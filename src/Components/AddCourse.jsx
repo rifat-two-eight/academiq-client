@@ -1,10 +1,10 @@
-import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import axios from "axios";
+import { use } from "react";
 import Swal from "sweetalert2";
 
 const AddCourse = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = use(AuthContext);
 
   const handleAddCourse = (e) => {
     e.preventDefault();
@@ -13,12 +13,14 @@ const AddCourse = () => {
     const description = form.description.value;
     const image = form.image.value;
     const duration = form.duration.value;
+    const seats = Number(form.seats.value); // ✅ Convert to number
 
     const courseData = {
       title,
       description,
       image,
       duration,
+      seats,
       addedBy: {
         name: user?.displayName || "Anonymous",
         email: user?.email || "unknown@example.com",
@@ -95,6 +97,20 @@ const AddCourse = () => {
               name="duration"
               required
               placeholder="e.g. 6 weeks"
+              className="w-full px-4 py-2 border border-zinc-300 rounded-md"
+            />
+          </div>
+
+          <div>
+            <label className="block mb-1 text-sm font-medium text-zinc-700">
+              Total Seats
+            </label>
+            <input
+              type="number"
+              name="seats"
+              required
+              min={1}
+              placeholder="e.g. 10"
               className="w-full px-4 py-2 border border-zinc-300 rounded-md"
             />
           </div>

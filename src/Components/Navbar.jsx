@@ -15,13 +15,18 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-zinc-800" to="/courses">
+        <NavLink className="text-zinc-800" to="/courses" end>
           Courses
         </NavLink>
       </li>
       <li>
         <NavLink className="text-zinc-800" to="/addcourse">
           Add Course
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="text-zinc-800" to="/managecourses">
+          Manage Courses
         </NavLink>
       </li>
     </>

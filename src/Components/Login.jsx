@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { FaGoogle, FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { use, useState } from "react";
 import loginAnimation from "../assets/login.json"; // 👈 Import your JSON file
@@ -10,7 +10,9 @@ import Swal from "sweetalert2";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { loginUser, setLoading, googleLogin, githubLogin } = use(AuthContext);
+  const location = useLocation();
   const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
   const handleGoogleLogin = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -26,7 +28,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         Swal.fire({
@@ -53,7 +55,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         Swal.fire({
@@ -83,7 +85,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         Swal.fire({

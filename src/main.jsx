@@ -11,6 +11,10 @@ import AuthProvider from "./Context/AuthProvider";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AddCourse from "./Components/AddCourse";
+import Courses from "./Components/Courses";
+import CourseDetails from "./Components/CourseDetails";
+import PrivateRoute from "./Components/PrivateRoute";
+import ManageCourses from "./Components/ManageCourses";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,7 +35,30 @@ const router = createBrowserRouter([
       },
       {
         path: "/addcourse",
-        Component: AddCourse,
+        element: (
+          <PrivateRoute>
+            <AddCourse></AddCourse>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/courses",
+        loader: () => fetch("http://localhost:3000/courses"),
+        Component: Courses,
+      },
+      {
+        path: "/courses/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/courses/${params.id}`),
+        Component: CourseDetails,
+      },
+      {
+        path: "/managecourses",
+        element: (
+          <PrivateRoute>
+            <ManageCourses></ManageCourses>
+          </PrivateRoute>
+        ),
       },
     ],
   },
