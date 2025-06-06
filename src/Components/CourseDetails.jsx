@@ -180,7 +180,7 @@ const CourseDetails = () => {
       ) : (
         <button
           onClick={handleEnrollToggle}
-          className={`px-5 py-2 text-white font-semibold rounded transition ${
+          className={`px-5 py-2 text-white font-semibold transition ${
             enrolled
               ? "bg-green-500 hover:bg-green-600"
               : "bg-purple-700 hover:bg-purple-800"

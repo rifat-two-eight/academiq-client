@@ -77,7 +77,7 @@ const EditCourse = () => {
               name="title"
               defaultValue={course.title}
               required
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md"
+              className="w-full px-4 py-2 border border-zinc-300"
             />
           </div>
 
@@ -89,7 +89,7 @@ const EditCourse = () => {
               name="description"
               defaultValue={course.description}
               required
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md"
+              className="w-full px-4 py-2 border border-zinc-300"
               rows={4}
             ></textarea>
           </div>
@@ -103,7 +103,7 @@ const EditCourse = () => {
               name="image"
               defaultValue={course.image}
               required
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md"
+              className="w-full px-4 py-2 border border-zinc-300"
             />
           </div>
 
@@ -116,7 +116,7 @@ const EditCourse = () => {
               name="duration"
               defaultValue={course.duration}
               required
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md"
+              className="w-full px-4 py-2 border border-zinc-300"
             />
           </div>
 
@@ -130,13 +130,13 @@ const EditCourse = () => {
               min={1}
               defaultValue={course.seats}
               required
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md"
+              className="w-full px-4 py-2 border border-zinc-300"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full cursor-pointer bg-purple-700 hover:bg-purple-800 text-white py-2 px-4 rounded-md transition"
+            className="w-full cursor-pointer bg-purple-700 hover:bg-purple-800 text-white py-2 px-4 transition"
           >
             Update Course
           </button>

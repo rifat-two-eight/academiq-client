@@ -61,7 +61,7 @@ const AddCourse = () => {
               name="title"
               required
               placeholder="e.g. JavaScript Essentials"
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md"
+              className="w-full px-4 py-2 border border-zinc-300 "
             />
           </div>
 
@@ -73,7 +73,7 @@ const AddCourse = () => {
               name="description"
               required
               placeholder="Write a short summary of the course"
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md"
+              className="w-full px-4 py-2 border border-zinc-300 "
               rows={4}
             ></textarea>
           </div>
@@ -87,7 +87,7 @@ const AddCourse = () => {
               name="image"
               required
               placeholder="https://example.com/image.jpg"
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md"
+              className="w-full px-4 py-2 border border-zinc-300 "
             />
           </div>
 
@@ -100,7 +100,7 @@ const AddCourse = () => {
               name="duration"
               required
               placeholder="e.g. 6 weeks"
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md"
+              className="w-full px-4 py-2 border border-zinc-300 "
             />
           </div>
 
@@ -114,13 +114,13 @@ const AddCourse = () => {
               required
               min={1}
               placeholder="e.g. 10"
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md"
+              className="w-full px-4 py-2 border border-zinc-300 "
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-purple-700 cursor-pointer text-white py-2 px-4 rounded-md hover:bg-purple-800 transition"
+            className="w-full bg-purple-700 cursor-pointer text-white py-2 px-4 hover:bg-purple-800 transition"
           >
             Add Course
           </button>

@@ -77,13 +77,13 @@ const ManageCourses = () => {
                   <td className="py-2 px-3 flex flex-wrap gap-2">
                     <button
                       onClick={() => navigate(`/edit-course/${course._id}`)}
-                      className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white py-1 px-5 rounded text-xs"
+                      className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white py-1 px-5 text-xs"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => setDeletingCourse(course)}
-                      className="bg-red-600 hover:bg-red-700 text-white py-1 px-3 cursor-pointer rounded text-xs"
+                      className="bg-red-600 hover:bg-red-700 text-white py-1 px-3 cursor-pointer text-xs"
                     >
                       Delete
                     </button>
