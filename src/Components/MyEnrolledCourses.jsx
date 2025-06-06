@@ -104,7 +104,7 @@ const MyEnrolledCourses = () => {
                   <td>
                     <button
                       onClick={() => handleRemove(course._id)}
-                      className="bg-red-500 cursor-pointer hover:bg-red-600 text-white text-sm px-3 py-1 rounded"
+                      className="bg-red-500 cursor-pointer hover:bg-red-600 text-white text-sm px-3 py-1"
                     >
                       Remove Enrollment
                     </button>
