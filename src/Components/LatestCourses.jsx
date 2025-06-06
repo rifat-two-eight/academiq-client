@@ -60,6 +60,13 @@ const LatestCourses = () => {
           </motion.div>
         ))}
       </div>
+      <div className="flex justify-center mt-7">
+        <Link to="/courses">
+          <button className="px-5 py-1 font-semibold border-2 border-purple-500 hover:border-purple-700 cursor-pointer">
+            All Courses
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

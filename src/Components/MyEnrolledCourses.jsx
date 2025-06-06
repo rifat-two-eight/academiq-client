@@ -68,9 +68,11 @@ const MyEnrolledCourses = () => {
 
   return (
     <div className="min-h-screen p-6">
-      <h2 className="text-2xl font-bold text-center mb-6 text-purple-700">
+      <h2 className="text-2xl font-bold text-center mb-6 text-zinc-800">
         My Enrolled Courses
       </h2>
+
+      <title>AcademIQ | My Enrolled</title>
 
       {enrollments.length === 0 ? (
         <p className="text-center text-zinc-600">
@@ -100,7 +102,7 @@ const MyEnrolledCourses = () => {
                   <td>
                     <button
                       onClick={() => handleRemove(course._id)}
-                      className="bg-red-500 hover:bg-red-600 text-white text-sm px-3 py-1 rounded"
+                      className="bg-red-500 cursor-pointer hover:bg-red-600 text-white text-sm px-3 py-1 rounded"
                     >
                       Remove Enrollment
                     </button>

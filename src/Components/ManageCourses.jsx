@@ -55,11 +55,13 @@ const ManageCourses = () => {
         Manage Your Courses
       </h2>
 
+      <title>AcademIQ | Manage Courses</title>
+
       {courses.length === 0 ? (
         <p className="text-center text-zinc-500">No courses found.</p>
       ) : (
         <div className="overflow-x-auto">
-          <table className="table w-full border text-sm">
+          <table className="table w-full border border-zinc-200 text-sm">
             <thead className="bg-purple-100 text-purple-800">
               <tr>
                 <th className="py-2 px-3 text-left">Title</th>
@@ -75,13 +77,13 @@ const ManageCourses = () => {
                   <td className="py-2 px-3 flex flex-wrap gap-2">
                     <button
                       onClick={() => navigate(`/edit-course/${course._id}`)}
-                      className="bg-blue-600 hover:bg-blue-700 text-white py-1 px-3 rounded text-xs"
+                      className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white py-1 px-5 rounded text-xs"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => setDeletingCourse(course)}
-                      className="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded text-xs"
+                      className="bg-red-600 hover:bg-red-700 text-white py-1 px-3 cursor-pointer rounded text-xs"
                     >
                       Delete
                     </button>

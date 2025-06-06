@@ -155,6 +155,7 @@ const CourseDetails = () => {
         alt={course.title}
         className="w-full h-60 object-cover border-2 border-purple-900 mb-6"
       />
+      <title>AcademIQ | Details</title>
       <h2 className="text-3xl font-bold text-zinc-800 mb-2">{course.title}</h2>
       <p className="text-zinc-600 mb-4">{course.description}</p>
       <p className="text-sm text-purple-700 mb-4">

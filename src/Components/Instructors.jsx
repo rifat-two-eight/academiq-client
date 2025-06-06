@@ -39,6 +39,8 @@ const Instructors = () => {
         Meet Our Instructors
       </h2>
 
+      <title>AcademIQ | Instructors</title>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {instructors.map((ins, index) => (
           <motion.div

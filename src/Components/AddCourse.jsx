@@ -45,9 +45,10 @@ const AddCourse = () => {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-xl bg-white shadow-md p-8">
-        <h2 className="text-2xl font-bold text-center text-purple-700 mb-6">
+        <h2 className="text-2xl font-bold text-center text-zinc-800 mb-6">
           Add New Course
         </h2>
+        <title>AcademIQ | Add Course</title>
         <form onSubmit={handleAddCourse} className="space-y-4">
           <div>
             <label className="block mb-1 text-sm font-medium text-zinc-700">

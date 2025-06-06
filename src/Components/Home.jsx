@@ -7,6 +7,7 @@ import Testimonials from "./Testimonials";
 const Home = () => {
   return (
     <div>
+      <title>AcademIQ | Home</title>
       <HeroSlider></HeroSlider>
       <LatestCourses></LatestCourses>
       <PopularCourses></PopularCourses>

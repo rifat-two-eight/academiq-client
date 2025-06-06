@@ -105,7 +105,7 @@ const Register = () => {
               name="name"
               placeholder="Enter your name"
               required
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:ring-2 focus:ring-purple-600 outline-none"
+              className="w-full px-4 py-2 border border-zinc-300 focus:ring-2 focus:ring-purple-600 outline-none"
             />
           </div>
 
@@ -118,7 +118,7 @@ const Register = () => {
               name="photoURL"
               placeholder="Paste your photo URL"
               required
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:ring-2 focus:ring-purple-600 outline-none"
+              className="w-full px-4 py-2 border border-zinc-300 focus:ring-2 focus:ring-purple-600 outline-none"
             />
           </div>
 
@@ -131,7 +131,7 @@ const Register = () => {
               name="email"
               placeholder="Enter your email"
               required
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:ring-2 focus:ring-purple-600 outline-none"
+              className="w-full px-4 py-2 border border-zinc-300 focus:ring-2 focus:ring-purple-600 outline-none"
             />
           </div>
 
@@ -144,7 +144,7 @@ const Register = () => {
               name="password"
               placeholder="Create a password"
               required
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:ring-2 focus:ring-purple-600 outline-none"
+              className="w-full px-4 py-2 border border-zinc-300 focus:ring-2 focus:ring-purple-600 outline-none"
             />
           </div>
 
@@ -157,14 +157,14 @@ const Register = () => {
               name="confirmPassword"
               placeholder="Re-enter your password"
               required
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:ring-2 focus:ring-purple-600 outline-none"
+              className="w-full px-4 py-2 border border-zinc-300 focus:ring-2 focus:ring-purple-600 outline-none"
             />
           </div>
 
           <input
             type="submit"
             value="Register"
-            className="w-full bg-purple-700 hover:bg-purple-800 text-white font-semibold py-2 px-4 rounded-md cursor-pointer transition duration-200"
+            className="w-full bg-purple-700 hover:bg-purple-800 text-white font-semibold py-2 px-4 cursor-pointer transition duration-200"
           />
 
           <p className="text-sm text-center text-zinc-700">

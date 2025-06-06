@@ -127,7 +127,7 @@ const Login = () => {
               name="email"
               placeholder="Enter your email"
               required
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full px-4 py-2 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-purple-600"
             />
           </div>
 
@@ -145,7 +145,7 @@ const Login = () => {
                 name="password"
                 placeholder="Enter your password"
                 required
-                className="w-full px-4 py-2 pr-10 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="w-full px-4 py-2 pr-10 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-purple-600"
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
@@ -165,13 +165,13 @@ const Login = () => {
           <input
             type="submit"
             value="Login"
-            className="w-full bg-purple-700 hover:bg-purple-800 text-white font-semibold py-2 px-4 rounded-md cursor-pointer transition duration-200"
+            className="w-full bg-purple-700 hover:bg-purple-800 text-white font-semibold py-2 px-4 cursor-pointer transition duration-200"
           />
 
           <button
             onClick={handleGoogleLogin}
             type="button"
-            className="w-full flex items-center justify-center gap-2 border border-zinc-300 cursor-pointer hover:border-purple-700 text-zinc-700 hover:text-purple-700 font-medium py-2 px-4 rounded-md transition duration-200"
+            className="w-full flex items-center justify-center gap-2 border border-zinc-300 cursor-pointer hover:border-purple-700 text-zinc-700 hover:text-purple-700 font-medium py-2 px-4 transition duration-200"
           >
             <FaGoogle className="text-lg" />
             Login with Google
@@ -179,7 +179,7 @@ const Login = () => {
           <button
             onClick={handleGithubLogin}
             type="button"
-            className="w-full flex items-center justify-center gap-2 border border-zinc-300 cursor-pointer hover:border-purple-700 text-zinc-700 hover:text-purple-700 font-medium py-2 px-4 rounded-md transition duration-200"
+            className="w-full flex items-center justify-center gap-2 border border-zinc-300 cursor-pointer hover:border-purple-700 text-zinc-700 hover:text-purple-700 font-medium py-2 px-4 transition duration-200"
           >
             <FaGithub className="text-lg" />
             Login with Github

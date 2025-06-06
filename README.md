@@ -1,12 +1,51 @@
-# React + Vite
+## 🎓 AcademIQ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application for managing and exploring online courses. Users can register, enroll in limited-seat courses, and manage their learning journey in an intuitive and responsive UI.
 
-Currently, two official plugins are available:
+## 🌐 Live URL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[🔗 Visit AcademIQ Live](https://your-deployment-url.netlify.app)
 
-## Expanding the ESLint configuration
+## 🛠️ Purpose
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The purpose of AcademIQ is to create a user-friendly platform where:
+
+- Users can browse and enroll in courses.
+- Admins/instructors can add, edit, and manage their own courses.
+- The platform handles real-time seat availability and enrollment logic securely using MongoDB and Node.js.
+
+## ✨ Key Features
+
+- 🔐 **Authentication** with Firebase (Register/Login)
+- 👤 **User Role Management** (Instructor & Student features)
+- 📚 **Course Enrollment System** with:
+  - Seat limits per course
+  - Enroll/Unenroll toggle
+  - Max 3 enrollments per user
+- 🧮 **Live seat count updates**
+- 📋 **Manage My Courses** & **My Enrollments**
+- 🧑‍🏫 **Meet the Instructors** animated section
+- 📊 **Popular Courses** based on highest enrollments
+- 🧾 **CRUD operations** on courses with confirmation modals
+- 🌙 **Responsive & Themed Design**
+
+## 📦 Technologies & NPM Packages Used
+
+## 🔧 Frontend (React + Tailwind CSS)
+
+- [`react-router-dom`](https://www.npmjs.com/package/react-router-dom)
+- [`axios`](https://www.npmjs.com/package/axios)
+- [`firebase`](https://www.npmjs.com/package/firebase)
+- [`sweetalert2`](https://www.npmjs.com/package/sweetalert2)
+- [`framer-motion`](https://www.npmjs.com/package/framer-motion)
+- [`lottie-react`](https://www.npmjs.com/package/lottie-react)
+- [`react-slick`](https://www.npmjs.com/package/react-slick)
+- [`slick-carousel`](https://www.npmjs.com/package/slick-carousel)
+- `tailwindcss` & `daisyui`
+
+### 🖥️ Backend (Express + MongoDB)
+
+- [`express`](https://www.npmjs.com/package/express)
+- [`mongodb`](https://www.npmjs.com/package/mongodb)
+- [`cors`](https://www.npmjs.com/package/cors)
+- [`dotenv`](https://www.npmjs.com/package/dotenv)

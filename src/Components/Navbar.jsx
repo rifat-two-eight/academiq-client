@@ -132,7 +132,7 @@ const Navbar = () => {
             </NavLink>
           </>
         ) : (
-          <div className="dropdown dropdown-end">
+          <div className="dropdown dropdown-end me-2 lg:me-0">
             <div
               tabIndex={0}
               role="button"

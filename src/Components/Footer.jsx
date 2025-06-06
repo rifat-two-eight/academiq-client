@@ -1,4 +1,10 @@
-import { FaGithub, FaTelegramPlane, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaGithub,
+  FaLinkedin,
+  FaTelegramPlane,
+  FaYoutube,
+} from "react-icons/fa";
 import { NavLink } from "react-router";
 
 const Footer = () => {
@@ -55,18 +61,18 @@ const Footer = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.youtube.com/@atiqurrahmanrifat7805"
-            className="hover:text-red-500 transition duration-300"
+            href="https://www.facebook.com/share/19RTX3PRLo/"
+            className="hover:text-blue-500 transition duration-300"
           >
-            <FaYoutube size={26} />
+            <FaFacebook size={26}></FaFacebook>
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://web.telegram.org/"
-            className="hover:text-blue-400 transition duration-300"
+            href="https://www.linkedin.com/in/rifat-28-dev/"
+            className="hover:text-sky-600 transition duration-300"
           >
-            <FaTelegramPlane size={26} />
+            <FaLinkedin size={26} />
           </a>
           <a
             target="_blank"

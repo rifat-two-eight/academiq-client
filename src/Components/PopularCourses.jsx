@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Course from "./Course"; // Assuming you already have a reusable <Course /> component
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 
 const PopularCourses = () => {
   const [courses, setCourses] = useState([]);
@@ -37,6 +38,13 @@ const PopularCourses = () => {
           ))}
         </div>
       )}
+      <div className="flex justify-center mt-7">
+        <Link to="/courses">
+          <button className="px-5 py-1 font-semibold border-2 border-purple-500 hover:border-purple-700 cursor-pointer">
+            All Courses
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

@@ -62,9 +62,10 @@ const EditCourse = () => {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-xl bg-white shadow-md p-8">
-        <h2 className="text-2xl font-bold text-center text-purple-700 mb-6">
+        <h2 className="text-2xl font-bold text-center text-zinc-800 mb-6">
           Edit Course
         </h2>
+        <title>AcademIQ | Edit </title>
 
         <form onSubmit={handleUpdate} className="space-y-4">
           <div>
@@ -135,7 +136,7 @@ const EditCourse = () => {
 
           <button
             type="submit"
-            className="w-full bg-purple-700 hover:bg-purple-800 text-white py-2 px-4 rounded-md transition"
+            className="w-full cursor-pointer bg-purple-700 hover:bg-purple-800 text-white py-2 px-4 rounded-md transition"
           >
             Update Course
           </button>
