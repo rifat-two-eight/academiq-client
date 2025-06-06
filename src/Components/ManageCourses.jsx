@@ -14,7 +14,7 @@ const ManageCourses = () => {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`http://localhost:3000/courses`)
+        .get(`https://academ-iq-server.vercel.app/courses`)
         .then((res) => {
           const myCourses = res.data.filter(
             (course) => course.addedBy?.email === user.email
@@ -30,7 +30,7 @@ const ManageCourses = () => {
   // Delete course
   const handleDelete = (courseId) => {
     axios
-      .delete(`http://localhost:3000/courses/${courseId}`)
+      .delete(`https://academ-iq-server.vercel.app/courses/${courseId}`)
       .then((res) => {
         if (res.data.deletedCount > 0) {
           setCourses(courses.filter((c) => c._id !== courseId));

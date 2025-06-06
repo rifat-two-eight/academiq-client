@@ -28,18 +28,20 @@ const AddCourse = () => {
       createdAt: new Date(),
     };
 
-    axios.post("http://localhost:3000/courses", courseData).then((res) => {
-      if (res.data.insertedId || res.data.acknowledged) {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Course Added Successfully!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        form.reset();
-      }
-    });
+    axios
+      .post("https://academ-iq-server.vercel.app/courses", courseData)
+      .then((res) => {
+        if (res.data.insertedId || res.data.acknowledged) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Course Added Successfully!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          form.reset();
+        }
+      });
   };
 
   return (

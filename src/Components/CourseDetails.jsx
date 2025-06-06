@@ -17,17 +17,17 @@ const CourseDetails = () => {
   const refreshDetails = useCallback(() => {
     setLoading(true);
     Promise.all([
-      fetch(`http://localhost:3000/course-details/${id}`).then((res) =>
-        res.json()
+      fetch(`https://academ-iq-server.vercel.app/course-details/${id}`).then(
+        (res) => res.json()
       ),
       user?.email
         ? fetch(
-            `http://localhost:3000/enrollment-check?email=${user.email}&courseId=${id}`
+            `https://academ-iq-server.vercel.app/enrollment-check?email=${user.email}&courseId=${id}`
           ).then((res) => res.json())
         : Promise.resolve({ enrolled: false }),
       user?.email
         ? fetch(
-            `http://localhost:3000/user-enrollment-count?email=${user.email}`
+            `https://academ-iq-server.vercel.app/user-enrollment-count?email=${user.email}`
           ).then((res) => res.json())
         : Promise.resolve({ count: 0 }),
     ])
@@ -77,7 +77,7 @@ const CourseDetails = () => {
       wasEnrolled ? wasUserCourseCount - 1 : wasUserCourseCount + 1
     );
 
-    fetch("http://localhost:3000/toggle-enroll", {
+    fetch("https://academ-iq-server.vercel.app/toggle-enroll", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: user.email, courseId: id }),

@@ -7,7 +7,7 @@ const PopularCourses = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/popular-courses")
+    fetch("https://academ-iq-server.vercel.app/popular-courses")
       .then((res) => res.json())
       .then((data) => setCourses(data))
       .catch((error) =>

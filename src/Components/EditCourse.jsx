@@ -12,7 +12,7 @@ const EditCourse = () => {
   // Load course data
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/course-details/${id}`)
+      .get(`https://academ-iq-server.vercel.app/course-details/${id}`)
       .then((res) => setCourse(res.data))
       .catch(() => {
         Swal.fire("Error", "Failed to load course data", "error");
@@ -32,7 +32,7 @@ const EditCourse = () => {
     };
 
     axios
-      .put(`http://localhost:3000/courses/${id}`, updatedCourse)
+      .put(`https://academ-iq-server.vercel.app/courses/${id}`, updatedCourse)
       .then((res) => {
         if (res.data.modifiedCount > 0 || res.data.acknowledged) {
           Swal.fire({

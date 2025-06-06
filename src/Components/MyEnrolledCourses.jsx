@@ -12,7 +12,9 @@ const MyEnrolledCourses = () => {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`http://localhost:3000/my-enrollments?email=${user.email}`)
+        .get(
+          `https://academ-iq-server.vercel.app/my-enrollments?email=${user.email}`
+        )
         .then((res) => setEnrollments(res.data))
         .catch(() => {
           Swal.fire("Error", "Failed to load enrolled courses", "error");
@@ -33,7 +35,7 @@ const MyEnrolledCourses = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:3000/remove-enrollment`, {
+          .delete(`https://academ-iq-server.vercel.app/remove-enrollment`, {
             data: { email: user.email, courseId },
           })
           .then((res) => {

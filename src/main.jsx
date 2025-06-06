@@ -46,13 +46,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/courses",
-        loader: () => fetch("http://localhost:3000/courses"),
+        loader: () => fetch("https://academ-iq-server.vercel.app/courses"),
         Component: Courses,
       },
       {
         path: "/courses/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/courses/${params.id}`),
+          fetch(`https://academ-iq-server.vercel.app/courses/${params.id}`),
         Component: CourseDetails,
       },
       {
