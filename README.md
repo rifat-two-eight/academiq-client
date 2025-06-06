@@ -4,7 +4,7 @@ A full-stack web application for managing and exploring online courses. Users ca
 
 ## 🌐 Live URL
 
-[🔗 Visit AcademIQ Live](https://your-deployment-url.netlify.app)
+🔗 [https://academiq-dfb4c.web.app]
 
 ## 🛠️ Purpose
 
