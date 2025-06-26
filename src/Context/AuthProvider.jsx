@@ -28,6 +28,8 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  // states manage
+
   useEffect(() => {
     const unsubsCribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
